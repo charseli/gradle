@@ -145,8 +145,7 @@ _ReSharper*/
 *.lock
 gradlew
 gradlew.bat
-gradle/
-settings.gradle
-.gradle/
+**/gradle/
+**/.gradle/
 .idea/*
-wrapper/
+**/wrapper/
