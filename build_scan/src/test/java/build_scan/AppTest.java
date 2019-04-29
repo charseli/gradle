@@ -3,6 +3,7 @@
  */
 package build_scan;
 
+import com.App;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

@@ -5,13 +5,13 @@
  * For more details take a look at the Java Quickstart chapter in the Gradle
  * User Manual available at https://docs.gradle.org/5.4.1/userguide/tutorial_java_projects.html
  */
-
 plugins {
     // Apply the java plugin to add support for Java
     id 'java'
 
     // Apply the application plugin to add support for building an application
     id 'application'
+//    id 'greeting'
 }
 
 repositories {
@@ -22,11 +22,32 @@ repositories {
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
+    compile project(':greeting-library')
     implementation 'com.google.guava:guava:27.0.1-jre'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+  
 }
 
 // Define the main class for the application
 mainClassName = 'build_scan.App'
+class Greeting extends DefaultTask{
+    String one
+    String two
+
+    @TaskAction
+    void sayGreeting(){
+        println "${one},${two}"
+    }
+}
+tasks.register('hello',Greeting){
+    group 'Welcome'
+    description 'Produces a greeting'
+    one 'Hello'
+    two 'World,I Love China'
+}
+tasks.register('nh',Greeting){
+    one 'lj'
+    two 'ni hao'
+}

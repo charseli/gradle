@@ -7,7 +7,7 @@ import com.gradle.scan.plugin.PublishedBuildScan
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds/
  */
 plugins {
-    id 'com.gradle.build-scan' version '1.16'
+    id 'com.gradle.build-scan' version '2.0.2'
     id 'java'
 }
 
@@ -45,3 +45,4 @@ buildScan {
         file('scan-journal.log') << "${new Date()} - ${sc.buildScanId} - ${sc.buildScanUri}\n"
     }
 }
+   
